@@ -1,0 +1,864 @@
+vagrant@ubuntu-bionic:/vagrant/backported/gl2ps$ debuild -us -uc || echo "Failed!"
+ dpkg-buildpackage -rfakeroot -us -uc -ui
+dpkg-buildpackage: info: source package gl2ps
+dpkg-buildpackage: info: source version 1.4.2+dfsg1-1~ywen1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Yaobin Wen <robin.wyb@gmail.com>
+ dpkg-source --before-build gl2ps
+dpkg-buildpackage: info: host architecture amd64
+dpkg-source: info: applying 01_FixTestLinkage.patch
+ debian/rules clean
+dh clean --buildsystem=cmake
+dh: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/vagrant/backported/gl2ps'
+dh_auto_clean
+dh_auto_clean: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+rm -rf *.pdf
+rm -rf *.aux
+rm -rf *.log
+rm -rf *.out
+rm -rf *.toc
+make[1]: Leaving directory '/vagrant/backported/gl2ps'
+   dh_clean -O--buildsystem=cmake
+dh_clean: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+ dpkg-source -b gl2ps
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building gl2ps using existing ./gl2ps_1.4.2+dfsg1.orig.tar.xz
+dpkg-source: warning: ignoring deletion of file .clang-format, use --include-removal to override
+dpkg-source: info: building gl2ps in gl2ps_1.4.2+dfsg1-1~ywen1.debian.tar.xz
+dpkg-source: info: building gl2ps in gl2ps_1.4.2+dfsg1-1~ywen1.dsc
+ debian/rules binary
+dh binary --buildsystem=cmake
+dh: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+   dh_update_autotools_config -O--buildsystem=cmake
+dh_update_autotools_config: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+   dh_autoreconf -O--buildsystem=cmake
+dh_autoreconf: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+   dh_auto_configure -O--buildsystem=cmake
+dh_auto_configure: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+	cd obj-x86_64-linux-gnu && cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run
+-- The C compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Looking for vsnprintf
+-- Looking for vsnprintf - found
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+-- Could NOT find GLUT (missing: GLUT_glut_LIBRARY GLUT_INCLUDE_DIR)
+-- Could NOT find ZLIB (missing: ZLIB_LIBRARY ZLIB_INCLUDE_DIR)
+-- Could NOT find ZLIB (missing: ZLIB_LIBRARY ZLIB_INCLUDE_DIR)
+-- Could NOT find PNG (missing: PNG_LIBRARY PNG_PNG_INCLUDE_DIR)
+-- Found LATEX: /usr/bin/latex
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+
+
+-- Build files have been written to: /vagrant/backported/gl2ps/obj-x86_64-linux-gnu
+   debian/rules override_dh_auto_build-indep
+make[1]: Entering directory '/vagrant/backported/gl2ps'
+pdflatex gl2ps.tex; pdflatex gl2ps.tex;
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./gl2ps.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+No file gl2ps.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+
+LaTeX Warning: Reference `sec:links' on page 1 undefined on input line 129.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Non-PDF special ignored!]
+
+LaTeX Warning: Reference `sec:limitations' on page 2 undefined on input line 17
+9.
+
+
+LaTeX Warning: Reference `sec:gl2psText' on page 2 undefined on input line 203.
+
+
+[2]
+
+LaTeX Warning: Reference `sec:gl2psEnable' on page 3 undefined on input line 25
+2.
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 261--263
+[]\OT1/cmr/m/n/10 All the pixmaps are sup-pressed from the out-put
+[3]
+Underfull \hbox (badness 1072) in paragraph at lines 303--309
+[]\OT1/cmr/m/n/10 This op-tion is in-com-pat-i-ble with $\OT1/cmtt/m/n/10 GL2PS
+ _ DRAW _ BACKGROUND$ \OT1/cmr/m/n/10 and
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+\OT1/cmtt/m/n/8 Times-[]Italic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Times-[]BoldIt
+alic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/
+n/8 Helvetica-[]Bold$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica-[]Oblique$\OT1
+/cmr/m/n/8 ,
+[6]
+Underfull \hbox (badness 1552) in paragraph at lines 456--460
+[]\OT1/cmr/m/n/10 Note that gl2ps 1.3.8 in-tro-duces a vari-ant of $\OT1/cmtt/m
+/n/10 gl2psTextOpt$\OT1/cmr/m/n/10 , called
+[7]
+
+LaTeX Warning: Reference `sec:gl2psBeginPage' on page 8 undefined on input line
+ 530.
+
+[8]
+Underfull \hbox (badness 3078) in paragraph at lines 593--593
+[]\OT1/cmtt/m/n/12 gl2psPointSize\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineW
+idth\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineCap \OT1/cmr/bx/n/12 and
+[9] [10]
+
+LaTeX Warning: Reference `sec:gl2psBeginPage' on page 11 undefined on input lin
+e 726.
+
+[11] (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd) [12]
+Underfull \hbox (badness 5878) in paragraph at lines 819--824
+[]\OT1/cmr/m/n/10 By de-fault, GL2PS checks if blend-ing is glob-ally en-abled
+in
+
+Underfull \hbox (badness 1681) in paragraph at lines 824--829
+[]$\OT1/cmtt/m/n/10 gl2psEnable(GL2PS _ LINE _ STIPPLE)$ \OT1/cmr/m/n/10 uses t
+he cur-rent val-ues of the
+
+LaTeX Warning: Reference `sec:gl2psText' on page 13 undefined on input line 840
+.
+
+
+LaTeX Warning: Reference `sec:gl2psDrawPixels' on page 13 undefined on input li
+ne 840.
+
+
+LaTeX Warning: Reference `sec:gl2psEnable' on page 13 undefined on input line 8
+41.
+
+
+LaTeX Warning: Reference `sec:gl2psPointSize' on page 13 undefined on input lin
+e 841.
+
+[13] [14] [15]
+Underfull \hbox (badness 1210) in paragraph at lines 1055--1059
+[]\OT1/cmr/m/n/10 (Nov 4, 2003) New $\OT1/cmtt/m/n/10 GL2PS _ COMPRESS$ \OT1/cm
+r/m/n/10 op-tion to cre-ate com-pressed
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+[]\OT1/cmr/m/n/10 (Apr 4, 2017) Make it pos-si-ble to add prim-i-tives di-
+
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+\OT1/cmr/m/n/10 rectly, with-out pars-ing the OpenGL feed-back buffer, us-ing
+
+Underfull \hbox (badness 1320) in paragraph at lines 1119--1124
+\OT1/cmtt/m/n/10 gl2psAddPolyPrimitive$\OT1/cmr/m/n/10 ; $\OT1/cmtt/m/n/10 gl2p
+sBeginPage$ \OT1/cmr/m/n/10 now ac-cepts a buffer-size
+[18] (./gl2ps.aux)
+
+Package rerunfilecheck Warning: File `gl2ps.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt8.pfb>
+Output written on gl2ps.pdf (18 pages, 224083 bytes).
+Transcript written on gl2ps.log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./gl2ps.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(./gl2ps.aux) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./gl2ps.out) (./gl2ps.out)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./gl2ps.toc
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+ [][] [][][]\OT1/cmtt/m/n/10 gl2psPointSize\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 g
+l2psLineWidth\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 gl2psLineCap \OT1/cmr/m/n/10 an
+d
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Non-PDF special ignored!] [2] [3]
+Underfull \hbox (badness 1062) in paragraph at lines 261--263
+[]\OT1/cmr/m/n/10 All the pixmaps are sup-pressed from the out-put
+[4]
+Underfull \hbox (badness 1072) in paragraph at lines 303--309
+[]\OT1/cmr/m/n/10 This op-tion is in-com-pat-i-ble with $\OT1/cmtt/m/n/10 GL2PS
+ _ DRAW _ BACKGROUND$ \OT1/cmr/m/n/10 and
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+\OT1/cmtt/m/n/8 Times-[]Italic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Times-[]BoldIt
+alic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/
+n/8 Helvetica-[]Bold$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica-[]Oblique$\OT1
+/cmr/m/n/8 ,
+
+Underfull \hbox (badness 1552) in paragraph at lines 456--460
+[]\OT1/cmr/m/n/10 Note that gl2ps 1.3.8 in-tro-duces a vari-ant of $\OT1/cmtt/m
+/n/10 gl2psTextOpt$\OT1/cmr/m/n/10 , called
+[7] [8] [9]
+Underfull \hbox (badness 3078) in paragraph at lines 593--593
+[]\OT1/cmtt/m/n/12 gl2psPointSize\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineW
+idth\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineCap \OT1/cmr/bx/n/12 and
+[10] [11] [12] (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd)
+Underfull \hbox (badness 5878) in paragraph at lines 819--824
+[]\OT1/cmr/m/n/10 By de-fault, GL2PS checks if blend-ing is glob-ally en-abled
+in
+
+Underfull \hbox (badness 1681) in paragraph at lines 824--829
+[]$\OT1/cmtt/m/n/10 gl2psEnable(GL2PS _ LINE _ STIPPLE)$ \OT1/cmr/m/n/10 uses t
+he cur-rent val-ues of the
+[13] [14] [15] [16]
+Underfull \hbox (badness 1210) in paragraph at lines 1055--1059
+[]\OT1/cmr/m/n/10 (Nov 4, 2003) New $\OT1/cmtt/m/n/10 GL2PS _ COMPRESS$ \OT1/cm
+r/m/n/10 op-tion to cre-ate com-pressed
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+[]\OT1/cmr/m/n/10 (Apr 4, 2017) Make it pos-si-ble to add prim-i-tives di-
+
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+\OT1/cmr/m/n/10 rectly, with-out pars-ing the OpenGL feed-back buffer, us-ing
+
+Underfull \hbox (badness 1320) in paragraph at lines 1119--1124
+\OT1/cmtt/m/n/10 gl2psAddPolyPrimitive$\OT1/cmr/m/n/10 ; $\OT1/cmtt/m/n/10 gl2p
+sBeginPage$ \OT1/cmr/m/n/10 now ac-cepts a buffer-size
+[18] (./gl2ps.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt8.pfb>
+Output written on gl2ps.pdf (18 pages, 228350 bytes).
+Transcript written on gl2ps.log.
+make[1]: Leaving directory '/vagrant/backported/gl2ps'
+   dh_auto_build -O--buildsystem=cmake -Nlibgl2ps-doc
+dh_auto_build: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+	cd obj-x86_64-linux-gnu && make -j4 -O
+make[1]: Warning: File 'Makefile' has modification time 0.39 s in the future
+make[1]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+/usr/bin/cmake -H/vagrant/backported/gl2ps -B/vagrant/backported/gl2ps/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make[1]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[1]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make[1]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make -f CMakeFiles/Makefile2 all
+make[2]: Warning: File 'CMakeFiles/Makefile2' has modification time 0.39 s in the future
+make -f CMakeFiles/shared.dir/build.make CMakeFiles/shared.dir/depend
+make -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/depend
+make -f CMakeFiles/pdf.dir/build.make CMakeFiles/pdf.dir/depend
+make[3]: Warning: File 'CMakeFiles/pdf.dir/progress.make' has modification time 0.38 s in the future
+make[3]: Warning: File 'CMakeFiles/shared.dir/flags.make' has modification time 0.32 s in the future
+make[3]: Warning: File 'CMakeFiles/lib.dir/flags.make' has modification time 0.34 s in the future
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+cd /vagrant/backported/gl2ps/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /vagrant/backported/gl2ps /vagrant/backported/gl2ps /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles/lib.dir/DependInfo.cmake --color=
+Scanning dependencies of target lib
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/build
+make[3]: Warning: File 'CMakeFiles/lib.dir/flags.make' has modification time 0.3 s in the future
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+cd /vagrant/backported/gl2ps/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /vagrant/backported/gl2ps /vagrant/backported/gl2ps /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles/pdf.dir/DependInfo.cmake --color=
+Scanning dependencies of target pdf
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make -f CMakeFiles/pdf.dir/build.make CMakeFiles/pdf.dir/build
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+cd /vagrant/backported/gl2ps/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /vagrant/backported/gl2ps /vagrant/backported/gl2ps /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles/shared.dir/DependInfo.cmake --color=
+Scanning dependencies of target shared
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make -f CMakeFiles/shared.dir/build.make CMakeFiles/shared.dir/build
+make[3]: Warning: File 'CMakeFiles/pdf.dir/progress.make' has modification time 0.33 s in the future
+make[3]: Warning: File 'CMakeFiles/shared.dir/flags.make' has modification time 0.27 s in the future
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[ 20%] Generating gl2ps.pdf
+/usr/bin/pdflatex /vagrant/backported/gl2ps/gl2ps.tex
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/vagrant/backported/gl2ps/gl2ps.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+No file gl2ps.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+
+LaTeX Warning: Reference `sec:links' on page 1 undefined on input line 129.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Non-PDF special ignored!]
+
+LaTeX Warning: Reference `sec:limitations' on page 2 undefined on input line 17
+9.
+
+
+LaTeX Warning: Reference `sec:gl2psText' on page 2 undefined on input line 203.
+
+
+[2]
+
+LaTeX Warning: Reference `sec:gl2psEnable' on page 3 undefined on input line 25
+2.
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 261--263
+[]\OT1/cmr/m/n/10 All the pixmaps are sup-pressed from the out-put
+[3]
+Underfull \hbox (badness 1072) in paragraph at lines 303--309
+[]\OT1/cmr/m/n/10 This op-tion is in-com-pat-i-ble with $\OT1/cmtt/m/n/10 GL2PS
+ _ DRAW _ BACKGROUND$ \OT1/cmr/m/n/10 and
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+\OT1/cmtt/m/n/8 Times-[]Italic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Times-[]BoldIt
+alic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/
+n/8 Helvetica-[]Bold$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica-[]Oblique$\OT1
+/cmr/m/n/8 ,
+[6]
+Underfull \hbox (badness 1552) in paragraph at lines 456--460
+[]\OT1/cmr/m/n/10 Note that gl2ps 1.3.8 in-tro-duces a vari-ant of $\OT1/cmtt/m
+/n/10 gl2psTextOpt$\OT1/cmr/m/n/10 , called
+[7]
+
+LaTeX Warning: Reference `sec:gl2psBeginPage' on page 8 undefined on input line
+ 530.
+
+[8]
+Underfull \hbox (badness 3078) in paragraph at lines 593--593
+[]\OT1/cmtt/m/n/12 gl2psPointSize\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineW
+idth\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineCap \OT1/cmr/bx/n/12 and
+[9] [10]
+
+LaTeX Warning: Reference `sec:gl2psBeginPage' on page 11 undefined on input lin
+e 726.
+
+[11] (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd) [12]
+Underfull \hbox (badness 5878) in paragraph at lines 819--824
+[]\OT1/cmr/m/n/10 By de-fault, GL2PS checks if blend-ing is glob-ally en-abled
+in
+
+Underfull \hbox (badness 1681) in paragraph at lines 824--829
+[]$\OT1/cmtt/m/n/10 gl2psEnable(GL2PS _ LINE _ STIPPLE)$ \OT1/cmr/m/n/10 uses t
+he cur-rent val-ues of the
+
+LaTeX Warning: Reference `sec:gl2psText' on page 13 undefined on input line 840
+.
+
+
+LaTeX Warning: Reference `sec:gl2psDrawPixels' on page 13 undefined on input li
+ne 840.
+
+
+LaTeX Warning: Reference `sec:gl2psEnable' on page 13 undefined on input line 8
+41.
+
+
+LaTeX Warning: Reference `sec:gl2psPointSize' on page 13 undefined on input lin
+e 841.
+
+[13] [14] [15]
+Underfull \hbox (badness 1210) in paragraph at lines 1055--1059
+[]\OT1/cmr/m/n/10 (Nov 4, 2003) New $\OT1/cmtt/m/n/10 GL2PS _ COMPRESS$ \OT1/cm
+r/m/n/10 op-tion to cre-ate com-pressed
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+[]\OT1/cmr/m/n/10 (Apr 4, 2017) Make it pos-si-ble to add prim-i-tives di-
+
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+\OT1/cmr/m/n/10 rectly, with-out pars-ing the OpenGL feed-back buffer, us-ing
+
+Underfull \hbox (badness 1320) in paragraph at lines 1119--1124
+\OT1/cmtt/m/n/10 gl2psAddPolyPrimitive$\OT1/cmr/m/n/10 ; $\OT1/cmtt/m/n/10 gl2p
+sBeginPage$ \OT1/cmr/m/n/10 now ac-cepts a buffer-size
+[18] (./gl2ps.aux)
+
+Package rerunfilecheck Warning: File `gl2ps.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt8.pfb>
+Output written on gl2ps.pdf (18 pages, 224083 bytes).
+Transcript written on gl2ps.log.
+/usr/bin/pdflatex /vagrant/backported/gl2ps/gl2ps.tex
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/vagrant/backported/gl2ps/gl2ps.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(./gl2ps.aux) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./gl2ps.out) (./gl2ps.out)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./gl2ps.toc
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+ [][] [][][]\OT1/cmtt/m/n/10 gl2psPointSize\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 g
+l2psLineWidth\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 gl2psLineCap \OT1/cmr/m/n/10 an
+d
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Non-PDF special ignored!] [2] [3]
+Underfull \hbox (badness 1062) in paragraph at lines 261--263
+[]\OT1/cmr/m/n/10 All the pixmaps are sup-pressed from the out-put
+[4]
+Underfull \hbox (badness 1072) in paragraph at lines 303--309
+[]\OT1/cmr/m/n/10 This op-tion is in-com-pat-i-ble with $\OT1/cmtt/m/n/10 GL2PS
+ _ DRAW _ BACKGROUND$ \OT1/cmr/m/n/10 and
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+\OT1/cmtt/m/n/8 Times-[]Italic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Times-[]BoldIt
+alic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/
+n/8 Helvetica-[]Bold$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica-[]Oblique$\OT1
+/cmr/m/n/8 ,
+
+Underfull \hbox (badness 1552) in paragraph at lines 456--460
+[]\OT1/cmr/m/n/10 Note that gl2ps 1.3.8 in-tro-duces a vari-ant of $\OT1/cmtt/m
+/n/10 gl2psTextOpt$\OT1/cmr/m/n/10 , called
+[7] [8] [9]
+Underfull \hbox (badness 3078) in paragraph at lines 593--593
+[]\OT1/cmtt/m/n/12 gl2psPointSize\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineW
+idth\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineCap \OT1/cmr/bx/n/12 and
+[10] [11] [12] (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd)
+Underfull \hbox (badness 5878) in paragraph at lines 819--824
+[]\OT1/cmr/m/n/10 By de-fault, GL2PS checks if blend-ing is glob-ally en-abled
+in
+
+Underfull \hbox (badness 1681) in paragraph at lines 824--829
+[]$\OT1/cmtt/m/n/10 gl2psEnable(GL2PS _ LINE _ STIPPLE)$ \OT1/cmr/m/n/10 uses t
+he cur-rent val-ues of the
+[13] [14] [15] [16]
+Underfull \hbox (badness 1210) in paragraph at lines 1055--1059
+[]\OT1/cmr/m/n/10 (Nov 4, 2003) New $\OT1/cmtt/m/n/10 GL2PS _ COMPRESS$ \OT1/cm
+r/m/n/10 op-tion to cre-ate com-pressed
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+[]\OT1/cmr/m/n/10 (Apr 4, 2017) Make it pos-si-ble to add prim-i-tives di-
+
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+\OT1/cmr/m/n/10 rectly, with-out pars-ing the OpenGL feed-back buffer, us-ing
+
+Underfull \hbox (badness 1320) in paragraph at lines 1119--1124
+\OT1/cmtt/m/n/10 gl2psAddPolyPrimitive$\OT1/cmr/m/n/10 ; $\OT1/cmtt/m/n/10 gl2p
+sBeginPage$ \OT1/cmr/m/n/10 now ac-cepts a buffer-size
+[18] (./gl2ps.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt8.pfb>
+Output written on gl2ps.pdf (18 pages, 228350 bytes).
+Transcript written on gl2ps.log.
+/usr/bin/pdflatex /vagrant/backported/gl2ps/gl2ps.tex
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/vagrant/backported/gl2ps/gl2ps.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(./gl2ps.aux) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./gl2ps.out) (./gl2ps.out)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./gl2ps.toc
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+ [][] [][][]\OT1/cmtt/m/n/10 gl2psPointSize\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 g
+l2psLineWidth\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 gl2psLineCap \OT1/cmr/m/n/10 an
+d
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Non-PDF special ignored!] [2] [3]
+Underfull \hbox (badness 1062) in paragraph at lines 261--263
+[]\OT1/cmr/m/n/10 All the pixmaps are sup-pressed from the out-put
+[4]
+Underfull \hbox (badness 1072) in paragraph at lines 303--309
+[]\OT1/cmr/m/n/10 This op-tion is in-com-pat-i-ble with $\OT1/cmtt/m/n/10 GL2PS
+ _ DRAW _ BACKGROUND$ \OT1/cmr/m/n/10 and
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+\OT1/cmtt/m/n/8 Times-[]Italic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Times-[]BoldIt
+alic$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/
+n/8 Helvetica-[]Bold$\OT1/cmr/m/n/8 , $\OT1/cmtt/m/n/8 Helvetica-[]Oblique$\OT1
+/cmr/m/n/8 ,
+
+Underfull \hbox (badness 1552) in paragraph at lines 456--460
+[]\OT1/cmr/m/n/10 Note that gl2ps 1.3.8 in-tro-duces a vari-ant of $\OT1/cmtt/m
+/n/10 gl2psTextOpt$\OT1/cmr/m/n/10 , called
+[7] [8] [9]
+Underfull \hbox (badness 3078) in paragraph at lines 593--593
+[]\OT1/cmtt/m/n/12 gl2psPointSize\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineW
+idth\OT1/cmr/bx/n/12 , \OT1/cmtt/m/n/12 gl2psLineCap \OT1/cmr/bx/n/12 and
+[10] [11] [12] (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd)
+Underfull \hbox (badness 5878) in paragraph at lines 819--824
+[]\OT1/cmr/m/n/10 By de-fault, GL2PS checks if blend-ing is glob-ally en-abled
+in
+
+Underfull \hbox (badness 1681) in paragraph at lines 824--829
+[]$\OT1/cmtt/m/n/10 gl2psEnable(GL2PS _ LINE _ STIPPLE)$ \OT1/cmr/m/n/10 uses t
+he cur-rent val-ues of the
+[13] [14] [15] [16]
+Underfull \hbox (badness 1210) in paragraph at lines 1055--1059
+[]\OT1/cmr/m/n/10 (Nov 4, 2003) New $\OT1/cmtt/m/n/10 GL2PS _ COMPRESS$ \OT1/cm
+r/m/n/10 op-tion to cre-ate com-pressed
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+[]\OT1/cmr/m/n/10 (Apr 4, 2017) Make it pos-si-ble to add prim-i-tives di-
+
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1124
+\OT1/cmr/m/n/10 rectly, with-out pars-ing the OpenGL feed-back buffer, us-ing
+
+Underfull \hbox (badness 1320) in paragraph at lines 1119--1124
+\OT1/cmtt/m/n/10 gl2psAddPolyPrimitive$\OT1/cmr/m/n/10 ; $\OT1/cmtt/m/n/10 gl2p
+sBeginPage$ \OT1/cmr/m/n/10 now ac-cepts a buffer-size
+[18] (./gl2ps.aux) )
+(see the transcript file for additional information)</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt8.pfb>
+Output written on gl2ps.pdf (18 pages, 228352 bytes).
+Transcript written on gl2ps.log.
+/usr/bin/cmake -E copy gl2ps.pdf /vagrant/backported/gl2ps
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[ 60%] Built target pdf
+make[2]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[ 40%] Building C object CMakeFiles/lib.dir/gl2ps.c.o
+/usr/bin/cc   -g -O2 -fdebug-prefix-map=/vagrant/backported/gl2ps=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2   -o CMakeFiles/lib.dir/gl2ps.c.o   -c /vagrant/backported/gl2ps/gl2ps.c
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[ 80%] Linking C static library libgl2ps.a
+/usr/bin/cmake -P CMakeFiles/lib.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/lib.dir/link.txt --verbose=1
+/usr/bin/ar qc libgl2ps.a  CMakeFiles/lib.dir/gl2ps.c.o
+/usr/bin/ranlib libgl2ps.a
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[ 80%] Built target lib
+make[2]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[ 60%] Building C object CMakeFiles/shared.dir/gl2ps.c.o
+/usr/bin/cc -Dshared_EXPORTS  -g -O2 -fdebug-prefix-map=/vagrant/backported/gl2ps=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC   -o CMakeFiles/shared.dir/gl2ps.c.o   -c /vagrant/backported/gl2ps/gl2ps.c
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[100%] Linking C shared library libgl2ps.so
+/usr/bin/cmake -E cmake_link_script CMakeFiles/shared.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -g -O2 -fdebug-prefix-map=/vagrant/backported/gl2ps=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -Wl,--no-add-needed -shared -Wl,-soname,libgl2ps.so.1.4 -o libgl2ps.so.1.4.2 CMakeFiles/shared.dir/gl2ps.c.o -lGL -lm
+/usr/bin/cmake -E cmake_symlink_library libgl2ps.so.1.4.2 libgl2ps.so.1.4 libgl2ps.so
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[100%] Built target shared
+make[2]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+   dh_auto_test -O--buildsystem=cmake
+dh_auto_test: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+dh_prep: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+   dh_auto_install -O--buildsystem=cmake
+dh_auto_install: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+	cd obj-x86_64-linux-gnu && make -j4 -O install DESTDIR=/vagrant/backported/gl2ps/debian/tmp AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+/usr/bin/cmake -H/vagrant/backported/gl2ps -B/vagrant/backported/gl2ps/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make[1]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[1]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make[1]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make -f CMakeFiles/Makefile2 all
+make -f CMakeFiles/shared.dir/build.make CMakeFiles/shared.dir/depend
+make -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/depend
+make -f CMakeFiles/pdf.dir/build.make CMakeFiles/pdf.dir/depend
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+cd /vagrant/backported/gl2ps/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /vagrant/backported/gl2ps /vagrant/backported/gl2ps /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles/pdf.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make -f CMakeFiles/pdf.dir/build.make CMakeFiles/pdf.dir/build
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+cd /vagrant/backported/gl2ps/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /vagrant/backported/gl2ps /vagrant/backported/gl2ps /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles/shared.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make -f CMakeFiles/shared.dir/build.make CMakeFiles/shared.dir/build
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+cd /vagrant/backported/gl2ps/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /vagrant/backported/gl2ps /vagrant/backported/gl2ps /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles/lib.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make -f CMakeFiles/lib.dir/build.make CMakeFiles/lib.dir/build
+make[3]: Nothing to be done for 'CMakeFiles/pdf.dir/build'.
+make[3]: Warning: File 'CMakeFiles/shared.dir/gl2ps.c.o' has modification time 0.51 s in the future
+make[3]: Warning: File 'libgl2ps.a' has modification time 0.48 s in the future
+make[3]: Nothing to be done for 'CMakeFiles/lib.dir/build'.
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[ 20%] Built target pdf
+make[2]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[2]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[ 80%] Built target lib
+make[2]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[ 40%] Linking C shared library libgl2ps.so
+/usr/bin/cmake -E cmake_link_script CMakeFiles/shared.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -g -O2 -fdebug-prefix-map=/vagrant/backported/gl2ps=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -Wl,--no-add-needed -shared -Wl,-soname,libgl2ps.so.1.4 -o libgl2ps.so.1.4.2 CMakeFiles/shared.dir/gl2ps.c.o -lGL -lm
+/usr/bin/cmake -E cmake_symlink_library libgl2ps.so.1.4.2 libgl2ps.so.1.4 libgl2ps.so
+make[3]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[3]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+[100%] Built target shared
+make[2]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make[1]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /vagrant/backported/gl2ps/obj-x86_64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+make -f CMakeFiles/Makefile2 preinstall
+make[2]: Nothing to be done for 'preinstall'.
+make[1]: Entering directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "None"
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/lib/libgl2ps.a
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/lib/libgl2ps.so.1.4.2
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/lib/libgl2ps.so.1.4
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/lib/libgl2ps.so
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/include/gl2ps.h
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/share/doc/gl2ps/README.txt
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/share/doc/gl2ps/COPYING.LGPL
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/share/doc/gl2ps/COPYING.GL2PS
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/share/doc/gl2ps/gl2psTest.c
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/share/doc/gl2ps/gl2psTestSimple.c
+-- Installing: /vagrant/backported/gl2ps/debian/tmp/usr/share/doc/gl2ps/gl2ps.pdf
+make[1]: Leaving directory '/vagrant/backported/gl2ps/obj-x86_64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+dh_install: The use of "debhelper-compat (= 11)" is experimental and may change (or be retired) without notice
+dh_install: Cannot find (any matches for) "usr/lib/*/lib*.so" (tried in ., debian/tmp)
+
+dh_install: libgl2ps-dev missing files: usr/lib/*/lib*.so
+dh_install: Cannot find (any matches for) "usr/lib/*/lib*.so.*" (tried in ., debian/tmp)
+
+dh_install: libgl2ps1.4 missing files: usr/lib/*/lib*.so.*
+dh_install: missing files, aborting
+debian/rules:8: recipe for target 'binary' failed
+make: *** [binary] Error 25
+dpkg-buildpackage: error: debian/rules binary subprocess returned exit status 2
+debuild: fatal error at line 1152:
+dpkg-buildpackage -rfakeroot -us -uc -ui failed
+Failed!
+vagrant@ubuntu-bionic:/vagrant/backported/gl2ps$

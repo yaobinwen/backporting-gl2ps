@@ -1,0 +1,200 @@
+gl2ps (1.4.2+dfsg1-1) unstable; urgency=medium
+
+  * [d143218] New upstream version 1.4.2+dfsg1
+  * [93df03f] Update patches
+  * [61676de] Remove symbol-file
+  * [6e4c5ce] Use secure URI in debian/watch.
+  * [c10ad20] Use secure URI in Homepage field.
+  * [af95085] Remove obsolete fields Contact, Name from debian/upstream/metadata
+              (already present in machine-readable debian/copyright).
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 09 Apr 2020 21:07:39 +0200
+
+gl2ps (1.4.0+dfsg1-3) unstable; urgency=medium
+
+  * Team Upload.
+  * [c7a803e] Update Build Depends and Description (Closes: #952247)
+  * [eb85949] Add upstream/metadata
+  * [9fddf65] Fix spaces in rules
+  * [1b88259] Add relevant symbols required by the package
+  * [023b2b2] Fix lintian
+  * [adc7918] Drop compat, switch to debhelper-compat
+  * [e1cd13d] Add "Rules-Requires-Root:no"
+  * [24f2f1a] Bump standards version to 4.5.0
+  * [bd3cae5] Fix compiling command in tests
+
+ -- Nilesh Patra <npatra974@gmail.com>  Sat, 29 Feb 2020 15:27:49 +0530
+
+gl2ps (1.4.0+dfsg1-2) unstable; urgency=medium
+
+  * [85c5383] Include 2 patches needed for VTK9. (Closes: #893869)
+  * [3c01150] Set compat-level 11
+  * [a3dd42c] Set Standards-Version 4.1.3
+  * [8388471] control: update Vcs-Browser and Vcs-Git
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 24 Mar 2018 23:09:42 +0100
+
+gl2ps (1.4.0+dfsg1-1) unstable; urgency=medium
+
+  * [324752b] Clean tex-helper-files.
+  * [9cfe0ac] Set Standards-Version: 4.1.0
+  * Upload into unstable.
+
+ -- Anton Gladky <gladk@debian.org>  Wed, 27 Sep 2017 21:35:46 +0200
+
+gl2ps (1.4.0+dfsg1-1~exp1) experimental; urgency=medium
+
+  * [d33fe24] New upstream version 1.4.0+dfsg1
+  * [8911bc1] Add +dfsg1 prefix.
+  * [afb2a8a] Switch to compat-level 10.
+  * [1aca219] Refresh patches.
+  * [c156fe4] Use more granular so-version (1.4).
+  * [ad35f79] Update short description for libgl2ps-dev.
+  * [4c82cdd] Use hardening=+all option.
+  * [ff7d078] Add -doc package.
+  * [0eee8f2] Update d/copyright.
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 20 May 2017 12:34:57 +0200
+
+gl2ps (1.3.9-4) unstable; urgency=high
+
+  * [b920f53] Fix typo in CMakeLists.
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 30 Jun 2016 18:41:20 +0200
+
+gl2ps (1.3.9-3) unstable; urgency=medium
+
+  [ Agustin Martin Domingo ]
+  * [df690e2]  Remove 1000_gl2ps_tikz-fix-rotated-text.patch.
+               Applied upstream in 1.3.9. (Closes: #827839)
+
+  [ Anton Gladky ]
+  * [63f256d] Add freeglut3-dev to tests/control.
+
+ -- Anton Gladky <gladk@debian.org>  Wed, 22 Jun 2016 21:29:11 +0200
+
+gl2ps (1.3.9-2) unstable; urgency=medium
+
+  * [0e58a6b] Set strict version for Breaks/Replaces. (Closes: #826776)
+  * [b85d12f] Fix package list in autopkgtest.
+
+ -- Anton Gladky <gladk@debian.org>  Wed, 08 Jun 2016 23:14:35 +0200
+
+gl2ps (1.3.9-1) unstable; urgency=medium
+
+  * [9b26219] Add autopkgtest.
+  * Move package from experimental to unstable.
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 27 May 2016 18:53:35 +0200
+
+gl2ps (1.3.8-3) unstable; urgency=medium
+
+  * [13bd395] Set version to 0.0.0. (Closes: #824882)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 21 May 2016 07:57:24 +0200
+
+gl2ps (1.3.9-1~exp2) experimental; urgency=medium
+
+  * [e6f31b9] Add Breaks/Replaces for libglps0.
+
+ -- Anton Gladky <gladk@debian.org>  Fri, 20 May 2016 20:21:20 +0200
+
+gl2ps (1.3.9-1~exp1) experimental; urgency=medium
+
+  * [53b511d] Imported Upstream version 1.3.9. (Closes: #822057)
+  * [ad4890f] Refresh patches.
+  * [1db23dd] Update package name. (Closes: #824357)
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 19 May 2016 23:11:26 +0200
+
+gl2ps (1.3.8-2) unstable; urgency=medium
+
+  * [355710d] Refresh patches, remove outdated.
+  * [2ee7615] Use cmake for lib-building. (Closes: #775405)
+  * [25bac02] Remove dbg-binary.
+  * [3e4b324] Set compat-level 9.
+  * [bc15f05] Update install-files. Remove outdated files in d/.
+  * [f22b3c6] Update d/copyright according to DEP-5.
+  * [1889a43] Remove d/orig*.
+  * [f63fdad] Move package into Debian Science Team. (Closes: #822161)
+  * [48e813c] Update d/watch.
+  * [7732718] Set --no-add-needed flag.
+  * [53746fc] Do not install extra license files.
+  * [7b05769] Ignore quilt dir
+  * [bea2dbd] Apply cme fix dpkg.
+
+ -- Anton Gladky <gladk@debian.org>  Thu, 19 May 2016 22:38:49 +0200
+
+gl2ps (1.3.8-1.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * 1000_gl2ps_tikz-fix-rotated-text.patch: Make sure brace is closed for
+    rotated text (Closes: #820930).
+
+ -- Agustin Martin Domingo <agmartin@debian.org>  Thu, 05 May 2016 15:31:44 +0200
+
+gl2ps (1.3.8-1.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix compilation error (missing libGL.so). Closes: #775412
+    Add missing deps on libgl-dev
+
+ -- Mathieu Malaterre <malat@debian.org>  Thu, 15 Jan 2015 12:48:33 +0100
+
+gl2ps (1.3.8-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix undefined symbols. Closes: #775403
+    + d/p/undef.patch
+
+ -- Mathieu Malaterre <malat@debian.org>  Thu, 15 Jan 2015 11:43:18 +0100
+
+gl2ps (1.3.8-1) unstable; urgency=low
+
+  * Upload to unstable
+  * Standards-Version updated to 3.9.4
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 14 May 2013 11:07:39 +0200
+
+gl2ps (1.3.8-1~exp1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 10 Dec 2012 18:14:17 +0100
+
+gl2ps (1.3.7-1~exp1) experimental; urgency=low
+
+  * New upstream release
+  * Standards-Version updated to version 3.9.3
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 18 Sep 2012 09:07:17 +0200
+
+gl2ps (1.3.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Standards-Version updated to version 3.9.2
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 22 Aug 2011 00:28:00 +0200
+
+gl2ps (1.3.5-2) unstable; urgency=low
+
+  * -Wl,--no-add-needed added to the linker. Should (Closes: #558864)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 18 Dec 2009 17:59:07 +0100
+
+gl2ps (1.3.5-1) unstable; urgency=low
+
+  * New upstream release
+  * change in the repack script (orig-tar.sh) since upstream changed the dir
+    name
+  * patch noexit.diff removed (applied upstream)
+  * TODO file removed (no longer in upstream tarball)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Mon, 09 Nov 2009 12:04:30 +0100
+
+gl2ps (1.3.4-1) unstable; urgency=low
+
+  * Initial release (Closes: #550369)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Fri, 09 Oct 2009 16:44:27 +0200

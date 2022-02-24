@@ -1,0 +1,45 @@
+Description: fix linkage of test-binaries
+Author: Anton Gladky <gladk@debian.org>
+Last-Update: 2016-05-19
+
+Index: gl2ps-1.4.0/CMakeLists.txt
+===================================================================
+--- gl2ps-1.4.0.orig/CMakeLists.txt
++++ gl2ps-1.4.0/CMakeLists.txt
+@@ -55,6 +55,8 @@ set(GL2PS_EXTRA_VERSION "" CACHE STRING
+ set(GL2PS_VERSION "${GL2PS_MAJOR_VERSION}.${GL2PS_MINOR_VERSION}")
+ set(GL2PS_VERSION "${GL2PS_VERSION}.${GL2PS_PATCH_VERSION}${GL2PS_EXTRA_VERSION}")
+ 
++INCLUDE(GNUInstallDirs)
++
+ execute_process(COMMAND date "+%Y%m%d" OUTPUT_VARIABLE DATE 
+                 OUTPUT_STRIP_TRAILING_WHITESPACE)
+ if(NOT DATE)
+@@ -127,7 +129,7 @@ if(OPENGL_FOUND)
+     set_target_properties(shared PROPERTIES COMPILE_FLAGS "-DGL2PSDLL -DGL2PSDLL_EXPORTS")
+   endif(MSVC)
+ 
+-  install(TARGETS lib shared DESTINATION lib${LIB_SUFFIX})
++  install(TARGETS lib shared DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ endif(OPENGL_FOUND)
+ 
+ if(WIN32)
+@@ -138,16 +140,14 @@ endif(WIN32)
+ 
+ install(FILES gl2ps.h DESTINATION include)
+ install(FILES ${CMAKE_SOURCE_DIR}/README.txt DESTINATION ${GL2PS_DOC})
+-install(FILES ${CMAKE_SOURCE_DIR}/COPYING.LGPL DESTINATION ${GL2PS_DOC})
+-install(FILES ${CMAKE_SOURCE_DIR}/COPYING.GL2PS DESTINATION ${GL2PS_DOC})
+ install(FILES ${CMAKE_SOURCE_DIR}/gl2psTest.c DESTINATION ${GL2PS_DOC})
+ install(FILES ${CMAKE_SOURCE_DIR}/gl2psTestSimple.c DESTINATION ${GL2PS_DOC})
+ 
+ if(GLUT_FOUND)
+   add_executable(gl2psTest WIN32 gl2psTest.c)
+-  target_link_libraries(gl2psTest lib ${EXTERNAL_LIBRARIES})
++  target_link_libraries(gl2psTest shared ${EXTERNAL_LIBRARIES})
+   add_executable(gl2psTestSimple WIN32 gl2psTestSimple.c)
+-  target_link_libraries(gl2psTestSimple lib ${EXTERNAL_LIBRARIES})
++  target_link_libraries(gl2psTestSimple shared ${EXTERNAL_LIBRARIES})
+ endif(GLUT_FOUND)
+ 
+ find_package(LATEX)

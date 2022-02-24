@@ -1,0 +1,2 @@
+Tests: build1 build2
+Depends: libgl2ps-dev, build-essential, freeglut3-dev

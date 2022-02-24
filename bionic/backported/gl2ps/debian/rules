@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--no-add-needed
+
+%:
+	dh $@ --buildsystem=cmake
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf *.pdf
+	rm -rf *.aux
+	rm -rf *.log
+	rm -rf *.out
+	rm -rf *.toc
+
+override_dh_auto_build-indep:
+	pdflatex gl2ps.tex; pdflatex gl2ps.tex;

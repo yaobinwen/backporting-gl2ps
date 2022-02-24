@@ -1,0 +1,46 @@
+Description: fix linkage of test-binaries
+Author: Anton Gladky <gladk@debian.org>
+Last-Update: 2020-04-09
+
+Index: gl2ps-1.4.2/CMakeLists.txt
+===================================================================
+--- gl2ps-1.4.2.orig/CMakeLists.txt
++++ gl2ps-1.4.2/CMakeLists.txt
+@@ -39,6 +39,8 @@ set(CMAKE_LEGACY_CYGWIN_WIN32 0)
+ # if CMAKE_BUILD_TYPE is specified use it; otherwise set the default
+ # build type to "RelWithDebInfo" ("-O2 -g" with gcc) prior to calling
+ # project()
++
++INCLUDE(GNUInstallDirs)
+ if(DEFINED CMAKE_BUILD_TYPE)
+   set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE} CACHE STRING "Choose build type")
+ else()
+@@ -146,13 +148,13 @@ if(OPENGL_FOUND)
+   target_link_libraries(shared ${EXTERNAL_LIBRARIES})
+   set_target_properties(shared PROPERTIES OUTPUT_NAME gl2ps
+     VERSION ${GL2PS_MAJOR_VERSION}.${GL2PS_MINOR_VERSION}.${GL2PS_PATCH_VERSION}
+-    SOVERSION ${GL2PS_MAJOR_VERSION})
++    SOVERSION ${GL2PS_MAJOR_VERSION}.${GL2PS_MINOR_VERSION})
+   if(WIN32 OR CYGWIN)
+     set_target_properties(shared PROPERTIES
+         COMPILE_FLAGS "-DGL2PSDLL -DGL2PSDLL_EXPORTS")
+   endif()
+-  install(TARGETS lib shared RUNTIME DESTINATION bin
+-                             LIBRARY DESTINATION lib${LIB_SUFFIX}
++  install(TARGETS lib shared RUNTIME DESTINATION ${CMAKE_INSTALL_BIN}
++                             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+                              ARCHIVE DESTINATION lib${LIB_SUFFIX})
+ endif()
+ 
+@@ -171,9 +173,9 @@ install(FILES ${CMAKE_SOURCE_DIR}/gl2psT
+ 
+ if(GLUT_FOUND)
+   add_executable(gl2psTest WIN32 gl2psTest.c)
+-  target_link_libraries(gl2psTest lib ${EXTERNAL_LIBRARIES})
++  target_link_libraries(gl2psTest shared ${EXTERNAL_LIBRARIES})
+   add_executable(gl2psTestSimple WIN32 gl2psTestSimple.c)
+-  target_link_libraries(gl2psTestSimple lib ${EXTERNAL_LIBRARIES})
++  target_link_libraries(gl2psTestSimple shared ${EXTERNAL_LIBRARIES})
+ endif()
+ 
+ find_package(LATEX)
